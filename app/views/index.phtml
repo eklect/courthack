@@ -1,0 +1,43 @@
+<html>
+<head>
+    <link rel="import" href="/bower_components/common_elements.html">
+    <link rel="stylesheet" href="/css/dropzone.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="http://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script src="/js/courthack.js"></script>
+    <script src="/js/dropzone.js"></script>
+
+</head>
+<body class="fullbleed vertical layout flex">
+
+
+<? if ($this->router->getControllerName() != "login") { ?>
+    <paper-drawer-panel>
+        <paper-header-panel drawer id="drawer">
+            <paper-toolbar onclick="window.location.href='/'">
+                <paper-icon-button icon="gavel"></paper-icon-button>
+                <span class="title">Court Hack</span>
+            </paper-toolbar>
+            <? $this->view->partial('partial/nav'); ?>
+        </paper-header-panel>
+        <paper-header-panel main>
+            <paper-toolbar>
+                <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+                <span class="title"></span>
+                <paper-button onclick="window.location='/login/logout'">Logout</paper-button>
+            </paper-toolbar>
+            <?= $this->getContent(); ?>
+        </paper-header-panel>
+    </paper-drawer-panel>
+<? } else { ?>
+    <paper-toolbar>
+        <paper-icon-button icon="gavel"></paper-icon-button>
+        <span class="title">Court Hack</span>
+    </paper-toolbar>
+    <?= $this->getContent(); ?>
+<? } ?>
+
+</body>
+</html>

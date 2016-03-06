@@ -1,0 +1,23 @@
+<table class="datatables stripe hover">
+    <thead>
+    <th>File ID</th>
+    <th>Filename</th>
+    <th>Actions</th>
+    </thead>
+    <tbody>
+    <? foreach ($entries as $value) { ?>
+        <tr>
+            <td>
+                <?= $value->id ?>
+            </td>
+            <td>
+                <?= $value->filename ?>
+            </td>
+            <td>
+                <paper-icon-button icon="remove-circle" title="Delete File"
+                                   onclick="var action=confirm('Are You Sure?');if(action){window.location.href='/<?=$this->router->getControllerName()?>/delete/<?= $value->id ?>'}"></paper-icon-button>
+            </td>
+        </tr>
+    <? } ?>
+    </tbody>
+</table>

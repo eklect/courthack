@@ -1,0 +1,49 @@
+body {
+  margin : 0;
+}
+
+#login-form {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home-bar {
+  background : white;
+}
+
+#front {
+  color : black;
+}
+
+#img {
+  background      : url("../img/Matheson_Courthouse_01.jpg") no-repeat center center;
+  width           : 100%;
+  height          : 450px;
+  background-size : cover;
+}
+
+#gavel {
+  color : black;
+}
+
+paper-toolbar.paper-toolbar-0 {
+  background : #3F9AB5 !important;
+}
+
+.datatables td {
+  text-align : center;
+}
+
+.nav-links {
+  cursor : pointer;
+}
+
+.sub-content {
+  margin-top : 20px;
+}
+
+.dropzone {
+  min-width: 100%; min-height:100%;
+  background: rgba(43, 223, 75, 0.36);
+}

@@ -1,0 +1,7 @@
+<paper-menu>
+    <?php foreach ($this->nav as $key => $value) { ?>
+        <paper-item onclick="window.location.href='<?= $value['url'] ?>'" class="nav-links">
+            <?= $value['name'] ?>
+        </paper-item>
+    <?php } ?>
+</paper-menu>

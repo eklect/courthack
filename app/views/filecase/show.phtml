@@ -1,0 +1,23 @@
+<table class="datatables stripe hover">
+    <thead>
+    <th>Case ID</th>
+    <th>Time Created</th>
+    <th>Case Type</th>
+    <th>Description</th>
+    <th>Actions</th>
+    </thead>
+    <tbody>
+    <? foreach ($cases as $case) { ?>
+        <tr>
+            <td><?= $case->case_id ?></td>
+            <td><?= $case->time_created ?></td>
+            <td><?= $case->case_type ?></td>
+            <td><?= $case->description ?></td>
+            <td>
+                <paper-icon-button icon="remove-circle" title="Delete File"
+                                   onclick="var action=confirm('Are You Sure?');if(action){window.location.href='/<?=$this->router->getControllerName()?>/delete/<?= $case->case_id ?>'}"></paper-icon-button>
+            </td>
+        </tr>
+    <? } ?>
+    </tbody>
+</table>

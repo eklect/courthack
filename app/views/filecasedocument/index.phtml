@@ -1,0 +1,14 @@
+<div class="layout" style="display: flex;justify-content: center; align-items: center;">
+
+    <? foreach ($sub_nav as $value) { ?>
+        <a href="/<?= $this->router->getControllerName() ?>/<?= $value ?>"
+           style="display:flex;width:20%;height:30%;margin:30px;align-items:center;justify-content: center; flex-grow:1;background:rgba(199, 255, 115, 0.45);">
+
+
+            <paper-icon class="arrow-forward"><?= $value ?></paper-icon>
+
+        </a>
+
+    <? } ?>
+
+</div>

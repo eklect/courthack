@@ -1,0 +1,27 @@
+<table>
+    <thead>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Hearing Type</th>
+    <th>Hearing Length</th>
+    <th>Room</th>
+    <th>Judge ID</th>
+    <th>Actions</th>
+    </thead>
+    <tbody>
+    <? foreach ($courtCases as $case) { ?>
+        <tr>
+            <td><?= $case->date ?></td>
+            <td><?= $case->time ?></td>
+            <td><?= $case->hearing_type ?></td>
+            <td><?= $case->hearing_length ?></td>
+            <td><?= $case->room ?></td>
+            <td><?= $case->judge_id ?></td>
+            <td>
+            <paper-icon-button icon="remove-circle" title="Delete File"
+                               onclick="var action=confirm('Are You Sure?');if(action){window.location.href='/<?=$this->router->getControllerName()?>/delete/<?= $value->id ?>'}"></paper-icon-button>
+            </td>
+        </tr>
+    <? } ?>
+    </tbody>
+</table>

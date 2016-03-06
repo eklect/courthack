@@ -1,0 +1,21 @@
+<table class="datatables stripe hover">
+    <thead>
+    <th>Ticket ID</th>
+    <th>Fine Amount</th>
+    <th>Due Date</th>
+    <th>Status</th>
+    <th>Actions</th>
+    </thead>
+    <tbody>
+    <? foreach ($tickets as $ticket) { ?>
+    <tr>
+        <td><?= $ticket->ticket_id ?></td>
+        <td><?= "$" . $ticket->fine_amount ?></td>
+        <td><?= $ticket->due_date ?></td>
+        <td><?= $ticket->status ?></td>
+        <td>Pay, Reduction, Protest: <paper-icon-button icon="remove-circle" title="Protest ticket"
+                                               onclick="{window.location.href='/<?=$this->router->getControllerName()?>/protest/<?=$ticket->ticket_id?>'}"></paper-icon-button></td>
+    </tr>
+    <? } ?>
+    </tbody>
+</table>
